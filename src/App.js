@@ -3,7 +3,7 @@ import './App.css';
 
 function News({ header, intro }) {
   return (
-    <div>
+    <div className="News">
       <h2>{header}</h2>
       <p>{intro}</p>
     </div>

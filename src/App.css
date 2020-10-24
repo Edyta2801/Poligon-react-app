@@ -1,9 +1,11 @@
-.App {
-  text-align: center;
+.News{
+  background-color: grey;
+  border:red 1px solid;
+  padding:10px;
 }
 
-.App-link {
-  color: #61dafb;
+.News p{
+  background: greenyellow;
 }
 
 
