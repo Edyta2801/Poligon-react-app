@@ -2,26 +2,42 @@ import React from 'react';
 import './App.css';
 
 
-const yellow='greenyellow';
+const yellow = 'greenyellow';
 
-const styles={
+const styles = {
   backgroundColor: 'grey',
-  border:'red 1px solid',
-  padding:'10px',
-  para:{
-    background:yellow
+  border: 'red 1px solid',
+  padding: '10px',
+  para: {
+    background: yellow
   }
 };
+class News extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+  render() {
+    const { header, intro } = this.props;
+    return (
+      <div style={styles}>
+        <h2>{header}</h2>
+        <p style={styles.para}>{intro}</p>
+      </div>
 
-
-function News({ header, intro }) {
-  return (
-    <div style={styles}>
-      <h2>{header}</h2>
-      <p style={styles.para}>{intro}</p>
-    </div>
-  );
+    );
+  }
 }
+
+
+
+// function News({ header, intro }) {
+//   return (
+//     <div style={styles}>
+//       <h2>{header}</h2>
+//       <p style={styles.para}>{intro}</p>
+//     </div>
+//   );
+// }
 
 // function News({ header, intro }) {
 //   return (
