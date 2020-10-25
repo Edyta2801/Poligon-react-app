@@ -13,19 +13,32 @@ const styles = {
   }
 };
 class News extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-  render() {
-    const { header, intro } = this.props;
-    return (
-      <div style={styles}>
-        <h2>{header}</h2>
-        <p style={styles.para}>{intro}</p>
-      </div>
-
-    );
+  state = {
+    date: new Date(),
+    score: 5
   }
+  componentDidMount() {
+    let loading = true;
+    this.setState({ score: 7 }, () => {
+      loading = false;
+    });
+  }
+
+
+}
+render() {
+  const { header, intro } = this.props;
+  const { score } = this.state;
+
+  return (
+    <div style={styles}>
+      <h2>{header}</h2>
+      <p style={styles.para}>{intro}</p>
+      <p>{score}</p>
+    </div>
+
+  );
+}
 }
 
 
