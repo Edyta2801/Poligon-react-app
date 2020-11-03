@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css';
 import News from './pages/Articles.js';
+import Header from './components/Header';
 
 
 const data = [
@@ -17,6 +18,7 @@ const data = [
 function App() {
   return (
     <div>
+      <Header/>
       {data.map((elem) => (
         <News
           key={`news-${elem.id}`}
