@@ -43,16 +43,17 @@ const styles = {
 //     );
 //   }
 // }
+const Scoring = ({ score }) => <p>Ocena:{score}</p>;
+const Author =({author})=><p>Autor:{author}</p>;
 
-
-
-function News({ header, intro }) {
-  const [score]=useState(7);
+function News({ header, intro, author }) {
+  const [score] = useState(7);
   return (
     <div style={styles}>
       <h2>{header}</h2>
       <p style={styles.para}>{intro}</p>
-      <p>Ocena:{score}</p>
+      <Author author={author}/>
+      <Scoring score={score} />
     </div>
   );
 }
@@ -68,11 +69,12 @@ function News({ header, intro }) {
 
 
 const data = [
-  {id:1, title:'Pilne: Co to był za dzień!', intro: 'Trego świat jeszcze nie widział',
+  {
+    id: 1, author: 'Jan Brzęczek', title: 'Pilne: Co to był za dzień!', intro: 'Tego świat jeszcze nie widział',
   }, {
-    id: 2, title:'Wszyscy zazdroszczą Polakom!', intro: 'Takiego clickbajtowego tytułu jeszcze nikt nie widział',
+    id: 2, author: 'Jan Brzęczek', title: 'Wszyscy zazdroszczą Polakom!', intro: 'Takiego clickbajtowego tytułu jeszcze nikt nie widział',
   }, {
-    id:3, title:'Adam Małysz zgolił wąs', intro: "Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy",
+    id: 3, author: 'Jan Brzęczek', title: 'Adam Małysz zgolił wąs', intro: 'Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy',
   }
 ];
 
@@ -80,7 +82,12 @@ function App() {
   return (
     <div>
       {data.map((elem) => (
-        <News key={`news-${elem.id  }`} header={elem.title} intro={elem.intro} />
+        <News
+          key={`news-${elem.id}`}
+          header={elem.title}
+          intro={elem.intro}
+          author={elem.author}
+        />
       ))}
       {/* <News header="Nagłówek 1" intro="Intro 1" />
       <News header="Nagłówek 2:Breaking news" intro="Intro 2" />
