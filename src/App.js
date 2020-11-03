@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import News from './components/News';
+import News from './articles/containers/News';
 
 
 const data = [

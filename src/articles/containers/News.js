@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react';
 
-import Author from './Author';
-import Scoring from './Scoring';
+import Author from '../components/Author';
+import Scoring from '../components/Scoring';
 
 const yellow = '#f1c40f';
 
