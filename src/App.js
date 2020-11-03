@@ -14,37 +14,8 @@ const styles = {
 };
 
 
-
-// class News extends React.Component {
-//   state = {
-//     date: new Date(),
-//     score: 5
-//   }
-//   componentDidMount() {
-//     let loading = true;
-//     this.setState({ score: 7 }, () => {
-//       loading = false;
-//     });
-//   }
-
-
-
-//   render() {
-//     const { header, intro } = this.props;
-//     const { score } = this.state;
-
-//     return (
-//       <div style={styles}>
-//         <h2>{header}</h2>
-//         <p style={styles.para}>{intro}</p>
-//         <p>{score}</p>
-//       </div>
-
-//     );
-//   }
-// }
 const Scoring = ({ score }) => <p>Ocena:{score}</p>;
-const Author =({author})=><p>Autor:{author}</p>;
+const Author = ({ author }) => <p>Autor:{author}</p>;
 
 function News({ header, intro, author }) {
   const [score] = useState(7);
@@ -52,20 +23,12 @@ function News({ header, intro, author }) {
     <div style={styles}>
       <h2>{header}</h2>
       <p style={styles.para}>{intro}</p>
-      <Author author={author}/>
+      <Author author={author} />
       <Scoring score={score} />
     </div>
   );
 }
 
-// function News({ header, intro }) {
-//   return (
-//     <div className="News">
-//       <h2>{header}</h2>
-//       <p>{intro}</p>
-//     </div>
-//   );
-// }
 
 
 const data = [
@@ -89,9 +52,6 @@ function App() {
           author={elem.author}
         />
       ))}
-      {/* <News header="Nagłówek 1" intro="Intro 1" />
-      <News header="Nagłówek 2:Breaking news" intro="Intro 2" />
-      <News header="Nagłówek 3: Nie śpię, bo trzymam kredens" intro="Intro 3" />*/}
     </div>
   );
 }
