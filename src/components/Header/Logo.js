@@ -1,8 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import logoImg from './szkola-reacta-logo.png';
+
+const styles={
+  width:150,
+  height:'auto'
+};
+
 
 function Logo() {
   return (
-    <div>Logo</div>
+    <div><img src={logoImg} alt="Logo" style={styles}/></div>
   );
 }
 
