@@ -3,16 +3,17 @@ import React from 'react';
 
 import Logo from './Logo';
 import NavLink from './NavLink';
+import Menu from './Menu';
 
 function Header() {
   return (
     <div>
       <Logo/>
-      <div>
+      <Menu>
           <NavLink to='/' label='Link-1' />
           <NavLink to='/' label='Link-2' />
           <NavLink to='/' label='Link-3' />
-      </div>
+      </Menu>
     </div>
   );
 }
