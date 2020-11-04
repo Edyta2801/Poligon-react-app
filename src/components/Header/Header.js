@@ -13,6 +13,7 @@ function Header() {
           <NavLink to='/' label='Link-1' />
           <NavLink to='/' label='Link-2' />
           <NavLink to='/' label='Link-3' />
+          <NavLink to='/' label='Link-4' />
       </Menu>
     </div>
   );

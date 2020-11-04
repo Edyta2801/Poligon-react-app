@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-const styles={
-    marginBottom:10
+const styles = {
+    marginBottom: 10
 };
 
-function Menu(){
-    return(
+function Menu({ children }) {
+    return (
         <nav style={styles}>
-
+            {children}
         </nav>
     );
 }
