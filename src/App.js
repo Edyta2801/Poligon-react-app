@@ -1,4 +1,7 @@
 import React from 'react';
+import { MenuLink } from './components/MenuNav';
+import {Menu} from './components/MenuNav';
+
 
 
 import Header from './components/Header';
@@ -11,10 +14,16 @@ function App() {
   return (
     <div>
       <Header />
+      <Menu>
+        <MenuLink to="/">Home</MenuLink>
+        <MenuLink to="/about">About</MenuLink>
+        <MenuLink to="/contact" isActive>Contact</MenuLink>
+        <MenuLink to="/posts">Posts</MenuLink>
+      </Menu>
       <Content>
         <Articles />
       </Content>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
