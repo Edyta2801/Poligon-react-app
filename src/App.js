@@ -2,11 +2,11 @@ import React from 'react';
 import { MenuLink } from './components/MenuNav';
 import {Menu} from './components/MenuNav';
 
-
+import Form from './pages/Form';
 
 import Header from './components/Header';
 import Content from './components/Content';
-import Articles from './pages/Articles';
+// import Articles from './pages/Articles';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -21,7 +21,8 @@ function App() {
         <MenuLink to="/posts">Posts</MenuLink>
       </Menu>
       <Content>
-        <Articles />
+        {/* <Articles /> */}
+        <Form/>
       </Content>
       <Footer />
     </div>
