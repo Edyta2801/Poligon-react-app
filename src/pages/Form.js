@@ -34,7 +34,7 @@ class Form extends React.Component {
     handleClick() {
         console.log('React Button');
     }
-    handleChange=(event)=> {
+    handleChange(event){
         console.log('input value:', event.target.value);
         this.setState({ name: event.target.value });
         console.log('this', this);
@@ -44,7 +44,7 @@ class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type='text' onChange={this.handleChange} />
+                <input type='text' onChange={this.handleChange.bind(this)} />
                 <button onClick={this.handleClick}>React Button</button>
             </form>
         );
