@@ -21,11 +21,11 @@ class Form extends React.Component {
         name: ''
     }
 
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
+    // constructor(props) {
+    //     super(props);
+    //     this.handleChange = this.handleChange.bind(this);
 
-    }
+    // }
 
     handleSubmit(event) {
         event.preventDefault();
@@ -34,7 +34,7 @@ class Form extends React.Component {
     handleClick() {
         console.log('React Button');
     }
-    handleChange(event) {
+    handleChange=(event)=> {
         console.log('input value:', event.target.value);
         this.setState({ name: event.target.value });
         console.log('this', this);
