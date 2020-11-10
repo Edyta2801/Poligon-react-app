@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 
 
+
+function useInput(initialValue = '') {
+    const [value, setValue] = useState('');
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+    return [value, handleChange];
+}
+
+
+
 function Form() {
 
-    const [name, setName] = useState('');
-    const [surname, setSurname] = useState('');
-    const [age, setAge] = useState('');
+    const [name, handleNameChange] = useInput('');
+    const [surname, handleSurnameChange] = useInput('');
+    const [age, handleAgeChange] = useInput('');
 
 
     const handleClick = () => console.log('React button');
@@ -14,30 +26,30 @@ function Form() {
         console.log(event);
     };
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
+    // const handleChange = (event) => {
+    //     const name = event.target.name;
+    //     const value = event.target.value;
 
-        if (name === 'name') {
-            setName(value);
-        } else if (name ==='surname') {
-            setSurname(value);
-        } else if (name === 'age') {
-            setAge(value);
+    //     if (name === 'name') {
+    //         setName(value);
+    //     } else if (name === 'surname') {
+    //         setSurname(value);
+    //     } else if (name === 'age') {
+    //         setAge(value);
 
-        }
-    };
+    //     }
+    // };
 
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <input type="text" name="name" placeholder="Name" onChange={handleChange} />
+                <input type="text" name="name" placeholder="Name" onChange={handleNameChange} />
             </div>
             <div>
-                <input type="text" name="surname" placeholder="Surname" onChange={handleChange} />
+                <input type="text" name="surname" placeholder="Surname" onChange={handleSurnameChange} />
             </div>
             <div>
-                <input type="text" name="age" placeholder="Age" onChange={handleChange} />
+                <input type="text" name="age" placeholder="Age" onChange={handleAgeChange} />
             </div>
             <button type="submit" onClick={handleClick}>Send</button>
         </form>
