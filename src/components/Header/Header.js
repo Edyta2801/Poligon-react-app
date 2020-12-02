@@ -1,19 +1,26 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
+import {
+  Link
+} from 'react-router-dom';
+
+
 import Logo from './Logo';
-import NavLink from './NavLink';
+// import NavLink from './NavLink';
 import Menu from './Menu';
 
 function Header() {
   return (
     <div>
-      <Logo/>
+      <Logo />
       <Menu>
-          <NavLink to='/' label='Link-1' />
-          <NavLink to='/' label='Link-2' />
-          <NavLink to='/' label='Link-3' />
-          <NavLink to='/' label='Link-4' />
+        <ul>
+          <li> <Link to='/'>Home</Link></li>
+          <li><Link to='/articles'>Articles</Link></li>
+          <li><Link to='/form'>Form</Link>
+          </li>
+        </ul>
       </Menu>
     </div>
   );
