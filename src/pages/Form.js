@@ -77,6 +77,7 @@ class Form extends React.Component {
 
 
         this.surnameInput = React.createRef();
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
 
@@ -85,7 +86,7 @@ class Form extends React.Component {
         event.preventDefault();
     }
 
-    handleClick() {
+    handleClick=() =>{
         console.log('React Button');
     }
     handleChange = (event) => {
