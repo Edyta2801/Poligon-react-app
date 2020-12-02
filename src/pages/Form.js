@@ -77,16 +77,24 @@ class Form extends React.Component {
 
 
         this.surnameInput = React.createRef();
-        this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate');
+    }
+    componentWillUnmount() {
+        console.log('componentWillUnmount');
+    }
 
 
     handleSubmit(event) {
         event.preventDefault();
     }
 
-    handleClick=() =>{
+    handleClick = () => {
         console.log('React Button');
     }
     handleChange = (event) => {
