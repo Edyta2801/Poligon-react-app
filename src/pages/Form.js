@@ -102,7 +102,7 @@ class Form extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form onSubmit={this.handleSubmit}>
                 <div>
                     <input type="text" name="name" placeholder="Name" onChange={this.handleChange} />
                 </div>
