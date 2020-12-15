@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-function Movies() {
-    const [movies, setMovies] = useState([]);
+
+function Movie() {
+    const { movieID } = useParams();
+    const [movie, setMovie] = useState(null);
     const [isLoading, setLoading] = useState(true);
     const [hasError, setError] = useState(false);
 
     useEffect(() => {
-        fetch('https://srapi.herokuapp.com/v1/movies')
+        fetch(`https://srapi.herokuapp.com/v1/movies/${movieID}`)
             .then((response) => response.json())
             .then((data) => {
-                setMovies(data);
+                setMovie(data);
                 setLoading(false);
             })
             .catch((error) => setError(true));
-    }, []);
+    }, [movieID]);
 
 
     return (
         <div className='Movies'>
             {isLoading && <p>Loading...</p>}
             {hasError && <p>An error has occured</p>}
-            {movies.map((movie) => (
-                <div key={movie.id} className='Movie'>
-                    <h2><Link to={`/movies/${movie.id}`}>{movie.title}</Link></h2>
-                    <p>{movie.description}</p>
-                </div>
-            ))}
+            <div className='Movie'>
+                <h2>{movie && movie.title}</h2>
+                <p>{movie && movie.description}</p>
+            </div>
         </div>
     );
 }
 
-export default Movies;
+export default Movie;

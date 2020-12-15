@@ -19,6 +19,7 @@ import Articles from './pages/Articles';
 import Footer from './components/Footer';
 import './App.css';
 import Movies from './pages/Movies';
+import Movie from './pages/Movie';
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
           <Route path='/form'>
             <Form />
           </Route>
+          <Route path='/movies/:movieID'>
+            <Movie />
+          </Route >
           <Route path='/movies'>
             <Movies />
           </Route >
