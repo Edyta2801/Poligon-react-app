@@ -18,6 +18,8 @@ import Home from './pages/Home';
 import Articles from './pages/Articles';
 import Footer from './components/Footer';
 import './App.css';
+import Movies from './pages/Movies';
+
 
 function App() {
   return (
@@ -37,12 +39,15 @@ function App() {
           <Route path='/form'>
             <Form />
           </Route>
+          <Route path='/movies'>
+            <Movies />
+          </Route >
           <Route path='/'>
             <Home />
           </Route>
         </Switch>
       </Content>
-      <Footer />
+        <Footer />
     </Router>
   );
 }
