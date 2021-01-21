@@ -1,16 +1,20 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import logoImg from './szkola-reacta-logo.png';
 
-const styles={
-  width:150,
-  height:'auto'
+const styles = {
+  width: 150,
+  height: 'auto'
 };
-
 
 function Logo() {
   return (
-    <div><img src={logoImg} alt="Logo" style={styles}/></div>
+    <div>
+      <Link to="/">
+        <img src={logoImg} alt="Logo" style={styles} />
+      </Link>
+    </div>
   );
 }
 

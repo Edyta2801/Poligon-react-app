@@ -1,60 +1,63 @@
 import React from 'react';
-import { MenuLink } from './components/MenuNav';
-import { Menu } from './components/MenuNav';
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from 'react-router-dom';
-
-
-
-import Form from './pages/Form';
 
 import Header from './components/Header';
 import Content from './components/Content';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Articles from './pages/Articles';
-import Footer from './components/Footer';
-import './App.css';
+import Registration from './pages/Registration';
 import Movies from './pages/Movies';
 import Movie from './pages/Movie';
-
+import CreateMovie from './pages/CreateMovie';
+import Form from './pages/Form';
+import Counter from './components/Counter';
+import Users from './pages/Users';
+import './App.css';
+import SecureRoute from './components/SecureRoute';
 
 function App() {
   return (
     <Router>
       <Header />
-      {/* <Menu>
-        <MenuLink to="/">Home</MenuLink>
-        <MenuLink to="/about">About</MenuLink>
-        <MenuLink to="/contact" isActive>Contact</MenuLink>
-        <MenuLink to="/posts">Posts</MenuLink>
-      </Menu> */}
       <Content>
         <Switch>
-          <Route path='/articles'>
+          <Route path="/articles">
             <Articles />
           </Route>
-          <Route path='/form'>
+          <Route path="/register">
+            <Registration />
+          </Route>
+          <Route exact path="/movies/create">
+            <CreateMovie />
+          </Route>
+
+          <Route exact path="/movies/:movieId">
+            <Movie />
+          </Route>
+
+          <SecureRoute path="/movies">
+            <Movies />
+          </SecureRoute>
+
+          <Route path="/form">
             <Form />
           </Route>
-          <Route path='/movies/:movieID'>
-            <Movie />
-          </Route >
-          <Route path='/movies'>
-            <Movies />
-          </Route >
-          <Route path='/'>
+          <Route path="/counter"><Counter /></Route>
+          <Route path="/users"><Users /></Route>
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
       </Content>
-        <Footer />
+      <Footer />
     </Router>
   );
 }
-
 
 export default App;

@@ -1,8 +1,9 @@
 import React from 'react';
+import './Content.css';
 
 function Content({children}){
     return(
-<main>{children}</main>
+<main className='Content'>{children}</main>
     );
 }
 
