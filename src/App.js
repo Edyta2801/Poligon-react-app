@@ -19,7 +19,7 @@ import Form from './pages/Form';
 import Counter from './components/Counter';
 import Users from './pages/Users';
 import './App.css';
-import SecureRoute from './components/SecureRoute';
+import SecureRoute from './components/SecureRoute/SecureRoute';
 
 function App() {
   return (
@@ -39,6 +39,10 @@ function App() {
 
           <Route exact path="/movies/:movieId">
             <Movie />
+          </Route>
+
+          <Route path="/movies">
+            <Movies />
           </Route>
 
           <SecureRoute path="/movies">

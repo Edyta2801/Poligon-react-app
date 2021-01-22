@@ -28,6 +28,7 @@ function Movies() {
         <div key={movie.id} className="Movie">
           <h2><Link to={`/movies/${movie.id}`}>{movie.title}</Link></h2>
           <p>{movie.description}</p>
+          <p>{movie.video_url}</p>
         </div>
       ))}
     </div>

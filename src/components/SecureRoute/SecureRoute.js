@@ -1,17 +1,27 @@
-
+import {findAllByTestId} from '@testing-library/react';
 import React from 'react';
 
-import { Route, Redirect, useHistory } from 'react-router-dom';
+import {
+  Route,
+  Redirect,
+  // , useHistory
+} from 'react-router-dom';
 
 const isAuthenticated = false;
 
-function SecureRoute({ children: Component, ...restProps }) {
+function SecureRoute({children: Component, ...restProps}) {
   // const history = useHistory();
 
   if (isAuthenticated) {
-    return <Route {...restProps}><Component /></Route>;
+    return (
+      <Route {...restProps}>
+        <Component />
+      </Route>
+    );
   }
   // return history.push('/login');
+
+  // return <Redirect push to="/" />;
   return <Redirect to="/login" />;
 }
 
