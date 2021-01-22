@@ -1,6 +1,6 @@
 import React from 'react';
 
-import News from '../components/News.js'
+import News from '../components/News.js';
 
 const data = [
   {
