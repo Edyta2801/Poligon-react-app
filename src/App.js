@@ -41,9 +41,9 @@ function App() {
             <Movie />
           </Route>
 
-          <Route path="/movies">
+          {/* <Route path="/movies">
             <Movies />
-          </Route>
+          </Route> */}
 
           <SecureRoute path="/movies">
             <Movies />
