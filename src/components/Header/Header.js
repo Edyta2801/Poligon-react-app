@@ -21,6 +21,7 @@ function Header() {
           <li><Link to="/form">Form</Link></li>
           <li><Link to="/counter">Counter</Link></li>
           <li><Link to="/users">Users</Link></li>
+          <li><Link to="/player">Player</Link></li>
         </ul>
       </Menu>
     </div>

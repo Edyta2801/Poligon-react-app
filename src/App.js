@@ -19,7 +19,9 @@ import Form from './pages/Form';
 import Counter from './components/Counter';
 import Users from './pages/Users';
 import './App.css';
-import SecureRoute from './components/SecureRoute/SecureRoute';
+// import SecureRoute from './components/SecureRoute/SecureRoute';
+
+import Player from './components/Player/Player';
 
 function App() {
   return (
@@ -41,19 +43,20 @@ function App() {
             <Movie />
           </Route>
 
-          {/* <Route path="/movies">
+          <Route path="/movies">
             <Movies />
-          </Route> */}
+          </Route>
 
-          <SecureRoute path="/movies">
+          {/* <SecureRoute path="/movies">
             <Movies />
-          </SecureRoute>
+          </SecureRoute> */}
 
           <Route path="/form">
             <Form />
           </Route>
           <Route path="/counter"><Counter /></Route>
           <Route path="/users"><Users /></Route>
+          <Route path="/player"><Player /></Route>
           <Route path="/">
             <Home />
           </Route>
